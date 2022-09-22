@@ -30,5 +30,9 @@ lot_summary <- table_two %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean
 
 ## Deliverable Three
 #Write an RScript using the t.test() function to determine if the PSI across all manufacturing lots is statistically different from the population mean of 1,500 pounds per square inch.
+t.test((table_two$PSI), mu=1500)
 
 #Write three more RScripts in your MechaCarChallenge.RScript using the t.test() function and its subset() argument to determine if the PSI for each manufacturing lot is statistically different from the population mean of 1,500 pounds per square inch.
+t.test(subset(table_two,Manufacturing_Lot =="lot_1")$PSI,mu = 1500)
+t.test(subset(table_two,Manufacturing_Lot =="lot_2")$PSI,mu = 1500)
+t.test(subset(table_two,Manufacturing_Lot =="lot_3")$PSI,mu = 1500)
